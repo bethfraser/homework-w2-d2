@@ -42,9 +42,25 @@ class Library
     person.borrow(book)
   end
 
+  def return(person_name, book_title)
+    person = @people[person_name]
+    book = @people[person_name].bookbag[book_title]
+    person.return_book(book_title)
+    self.add_book(book)
+  end
+
+
   def view_person_bookbag(person_name)
     person = @people[person_name]
-    puts person.display_books
+    person.display_books
+  end
+
+  def view_borrowed_books
+    @people.each do |person_name, person_object| 
+      unless person_object.bookbag.empty?
+        puts person_object.display_books 
+      end
+    end
   end
 
 

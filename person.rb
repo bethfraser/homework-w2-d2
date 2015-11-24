@@ -17,8 +17,12 @@ class Person
     @bookbag[book.title] = book
   end
 
+  def return_book(book_title)
+    @bookbag.delete(book_title)
+  end
+
+
   def display_books
-    puts "Wilma's Bookbag:\n"
     @bookbag.map {|key, book| book.display_string }
   end
 

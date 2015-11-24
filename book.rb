@@ -10,7 +10,7 @@ class Book
   end
 
   def display_string
-    "#{@title}\t\t (#{genre})"
+    "#{@title}, (#{genre})"
   end
 
 

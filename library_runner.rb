@@ -8,9 +8,6 @@ require_relative('person')
 # create book 
 # create person
 
-# return book to library
-# list borrowed books
-
 library = Library.new("Beth's Library")
 
 # library.add_book(Book.new({title: 'Harry Potter', genre: 'Fantasy'}))
@@ -45,16 +42,28 @@ puts library.list_people
 puts "\n"
 
 # lend book to person
-
+puts "Wilma borrows 'The Hobbit' and 'Histories'.\n\n"
 library.lend("Wilma", "The Hobbit")
 library.lend("Wilma", "Histories")
 
-puts library.list_books
+
 puts library.list_people
 puts "\n"
 
+# return book to library
+puts "Wilma returns 'The Hobbit'.\n\n"
+library.return("Wilma", "The Hobbit")
+
+puts "Wilma's bookbag contains:"
 puts library.view_person_bookbag("Wilma")
 
+# list borrowed books
+puts "\nFred borrows 'To Kill a Mockingbird'.\n"
+library.lend("Fred", "To Kill a Mockingbird")
 
+puts "\nCurrent books in the library:"
+puts library.list_books
+puts "\nCurrent books being borrowed:"
+library.view_borrowed_books
 
 # binding.pry;''
