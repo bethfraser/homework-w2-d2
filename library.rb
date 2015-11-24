@@ -63,6 +63,16 @@ class Library
     end
   end
 
+  def find_book(input_book_title)
+    if @bookshelf.include?(input_book_title)
+      puts "#{input_book_title} is in the library."
+
+    else @people.include?(input_book_title)
+      people_list = @people.map { |person_name, person_object| person_object }
+      person_borrowing = people_list.detect { |person| person.bookbag[input_book_title] }
+      puts "#{input_book_title} is being borrowed by #{person_borrowing.name}."
+    end
+  end
 
 end
 

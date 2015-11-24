@@ -66,4 +66,10 @@ puts library.list_books
 puts "\nCurrent books being borrowed:"
 library.view_borrowed_books
 
+puts "\n"
+library.find_book("To Kill a Mockingbird")
+library.find_book("Histories")
+library.find_book("A Brief History of Time")
+library.find_book("The Hobbit")
+
 # binding.pry;''
